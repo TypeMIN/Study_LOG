@@ -1,2 +1,2 @@
-# CS_LOG
-CS study for Tistory
+# Study_LOG
+Study log for Tistory
