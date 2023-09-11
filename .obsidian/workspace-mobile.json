@@ -1,0 +1,151 @@
+{
+  "main": {
+    "id": "19e3f0b5fc69f921",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b37b261f4773fdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4d6579e07cb74ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Network/Computer Network.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7b77446a25cad5c0",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "5b7caeed0dd22b50",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "e3c1da9b04675bdd",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "b0898db5d7b180a2",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "eda76573dd33e162",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "bb771e0295c55192",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "64af01d9e1cb3bfa",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Computer Network/Computer Network.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "788dc7482ae75d01",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Computer Network/Computer Network.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "ceda70e59f078260",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Computer Network/Computer Network.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e4d6579e07cb74ca",
+  "lastOpenFiles": [
+    "Computer Network/Computer Network.md",
+    "Computer Network/Internet.md",
+    "Database/Database.md",
+    "Computation Theory/Computation Theory.md",
+    "Computer Network/무제 파일.md",
+    "Linear Algebra/Linear Algebra.md",
+    "Statistics/Statistics.md",
+    "Data Structure/Data Structure.md",
+    "Data Mining/Data Mining.md",
+    "Algorithm/Algorithm.md",
+    "Computer Security/Computer Security.md",
+    "Operating System/Operating System.md",
+    "Computer Architecture/Computer Architecture.md",
+    "README.md"
+  ]
+}
