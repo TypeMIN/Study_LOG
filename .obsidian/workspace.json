@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "96bf2a44a282499f",
+        "id": "d85e2193ca960a10",
         "type": "tabs",
         "children": [
           {
-            "id": "49f02101812cc168",
+            "id": "81eac6aeee67de60",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Computer Security/Computer Security.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Computer Security/Computer Security.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Computer Security/Computer Security.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,19 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Computer Security/Computer Security.md"
+              }
+            }
+          },
+          {
+            "id": "0aa022cc04d522ea",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
             }
           }
         ]
@@ -138,19 +156,20 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "49f02101812cc168",
+  "active": "81eac6aeee67de60",
   "lastOpenFiles": [
-    "Computer Network/Computer Network.md",
+    "Computer Security/Lecture.md",
+    "Computer Network/Internet.md",
+    "Computation Theory/Computation Theory.md",
     "README.md",
+    "Computer Network/Computer Network.md",
     "Computer Architecture/Computer Architecture.md",
     "Algorithm/Algorithm.md",
-    "Computation Theory/Computation Theory.md",
     "Data Mining/Data Mining.md",
     "Data Structure/Data Structure.md",
     "Database/Database.md",
     "Linear Algebra/Linear Algebra.md",
     "Operating System/Operating System.md",
-    "Computer Network/Internet.md",
     "무제 파일.md",
     "무제 파일.canvas",
     "Computer Network/무제 파일.md",

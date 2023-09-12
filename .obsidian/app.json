@@ -1,4 +1,7 @@
 {
   "promptDelete": false,
-  "attachmentFolderPath": "Computer Theory"
+  "attachmentFolderPath": "/",
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true
 }
