@@ -1,0 +1,2 @@
+[[Passive Attack]]
+[[Active Attack]]

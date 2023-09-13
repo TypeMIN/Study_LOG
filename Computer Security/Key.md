@@ -1,0 +1,1 @@
+info used in [[cipher]] known only to sender/receiver
