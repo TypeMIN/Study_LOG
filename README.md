@@ -1,2 +1,2 @@
 # Study_LOG
-Study log for Tistory
+Study log with Obsidian
