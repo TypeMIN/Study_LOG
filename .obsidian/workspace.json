@@ -11,8 +11,12 @@
             "id": "074f5028d3f27ea1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Computer Security/Confidentiality.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Computer Security/Confidentiality.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Computer Security/Confidentiality.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Computer Security/Confidentiality.md"
+              }
             }
           },
           {
@@ -150,32 +158,32 @@
   },
   "active": "074f5028d3f27ea1",
   "lastOpenFiles": [
-    "Computer Security/Ciphertext.md",
-    "Computer Security/Classical Cryptography.md",
-    "Computer Security/Availability.md",
-    "Computer Security/Active Attack.md",
     "Computer Security/Computer Security.md",
-    "Computer Security/Properties of Computer Security.md",
-    "Computer Security/Confidentiality.md",
-    "Computer Security/Integrity.md",
     "Computer Security/Cryptography.md",
-    "Computer Security/Plaintext.md",
-    "Computer Security/Key.md",
-    "Computer Security/Cipher.md",
-    "Computer Network/Protocol.md",
-    "Computer Network/Internet.md",
-    "Computer Network/Network Edge.md",
-    "Computer Network/Computer Network.md",
-    "Computer Security/Authentication.md",
-    "Computer Security/Modern Cryptography.md",
-    "Computer Security/Decipher.md",
-    "Computer Security/Encipher.md",
-    "Computer Security/무제 파일.md",
+    "Computer Security/Confidentiality.md",
+    "Computer Security/Classical Cryptography.md",
+    "Computer Security/Aspects of Security.md",
+    "Computer Security/Properties of Computer Security.md",
+    "Computer Security/Availability.md",
+    "Computer Security/Non-repudiation.md",
+    "Computer Security/Security Service.md",
+    "Computer Security/Symmetric Key Cryptography.md",
+    "Computer Security/Security Mechanism.md",
     "Computer Security/Security Attack.md",
     "Computer Security/Passive Attack.md",
-    "Computer Security/Security Service.md",
-    "Computer Security/Security Mechanism.md",
-    "Computer Security/Non-repudiation.md",
+    "Computer Security/Plaintext.md",
+    "Computer Security/Modern Cryptography.md",
+    "Computer Security/Integrity.md",
+    "Computer Security/Decipher.md",
+    "Computer Security/Authentication.md",
+    "Computer Security/Asymmetric Key Cryptography.md",
+    "Computer Security/Active Attack.md",
+    "Computer Security/Digital Signatures.md",
+    "Computer Security/Cipher.md",
+    "Computer Security/Key.md",
+    "Computer Security/Ciphertext.md",
+    "Computer Network/Protocol.md",
+    "Computer Network/Internet.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",

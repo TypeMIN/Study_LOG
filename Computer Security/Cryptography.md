@@ -1,4 +1,4 @@
-Cryptography is about [[Confidentiality]] and [[Integrity]] (+ [[Authentication]], [[Non-repudiation]])
+Cryptography is about [[]] and Integrity (+ Authentication, Non-repudiation)
 
 [[Symmetric Key Cryptography]]
 [[Asymmetric Key Cryptography]]
@@ -7,5 +7,4 @@ Cryptography is about [[Confidentiality]] and [[Integrity]] (+ [[Authentication]
 
 [[Classical Cryptography]]
 [[Modern Cryptography]]
-[[Key|test]]
 
