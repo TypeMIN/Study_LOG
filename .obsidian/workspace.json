@@ -4,40 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "30dfabaeee2d2027",
+        "id": "d97f2e122793fc22",
         "type": "tabs",
         "children": [
           {
-            "id": "b4caa6b87183161a",
+            "id": "3ab03a0b8f0096c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Classical Cryptography.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ac45df962ed90153",
+            "id": "a1b9edd7d11e65e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Integrity.md",
+                "file": "Computer Security/Block Cipher Modes of Operation.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f58dbc196fc53c95",
+            "id": "9633f3067903d61a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Properties of Computer Security.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 228.5
   },
   "right": {
     "id": "15358305ef214e1a",
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Properties of Computer Security.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Properties of Computer Security.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Security/Confidentiality.md"
+                "file": "Computer Security/Properties of Computer Security.md"
               }
             }
           },
@@ -181,34 +181,34 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "f58dbc196fc53c95",
+  "active": "9633f3067903d61a",
   "lastOpenFiles": [
-    "Computer Security/Cryptography.md",
-    "Computer Security/Authentication.md",
-    "Computer Security/Computer Security.md",
-    "Computer Security/Availability.md",
-    "Computer Security/Integrity.md",
-    "Computer Security/Checksum.md",
-    "Computer Security/Modern Cryptography.md",
     "Computer Security/Non-repudiation.md",
-    "Computer Security/Confidentiality.md",
-    "Computer Security/Classical Cryptography.md",
-    "Computer Security/Aspects of Security.md",
     "Computer Security/Properties of Computer Security.md",
-    "Computer Security/Security Service.md",
+    "Computer Security/Computer Security.md",
+    "Computer Security/Block Cipher Modes of Operation.md",
+    "Computer Security/Public-Key Infrastructure.md",
+    "Computer Security/Classical Cryptography.md",
+    "Computer Security/Cryptography.md",
+    "Computer Security/Modern Cryptography.md",
+    "Computer Security/Confidentiality.md",
     "Computer Security/Symmetric Key Cryptography.md",
+    "Computer Security/Hash Functions.md",
+    "Computer Security/Digital Signature.md",
+    "Computer Security/Asymmetric Key Cryptography.md",
     "Computer Security/Security Mechanism.md",
     "Computer Security/Security Attack.md",
     "Computer Security/Passive Attack.md",
+    "Computer Security/Aspects of Security.md",
+    "Computer Security/Active Attack.md",
+    "Computer Security/Authentication.md",
+    "Computer Security/Availability.md",
+    "Computer Security/Integrity.md",
+    "Computer Security/Checksum.md",
+    "Computer Security/Security Service.md",
     "Computer Security/Plaintext.md",
     "Computer Security/Decipher.md",
-    "Computer Security/Asymmetric Key Cryptography.md",
-    "Computer Security/Active Attack.md",
     "Computer Security/Digital Signatures.md",
-    "Computer Security/Cipher.md",
-    "Computer Security/Key.md",
-    "Computer Security/Ciphertext.md",
-    "Computer Network/Protocol.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",
