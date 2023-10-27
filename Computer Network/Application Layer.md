@@ -1,0 +1,412 @@
+## Network apps
+- Some network apps
+	- social networking
+	- Web
+	- text messaging
+	- e-mail
+	- multi-user network games
+	- streaming stored video (youtube, netflix ....)
+	- P2P file sharing
+	- voice over IP (Skype ....)
+	- real-time video conferencing (Zoom ...)
+	- Internet search
+	- remote login
+- Creating a network app
+	- with programs that:
+		- run on (different) end systems
+		- communicate over network
+		- e.g. web server software communicates with browser software
+	- no need to write software for network-core devices
+		- network-core devices do not run user application
+		- applications on end systems allows for rapid app development propagation
+- Client-server paradigm
+	- server
+		- always-on host
+		- permanent IP address
+		- often in data centers, for scaling
+	- clients
+		- contact, communicate with server
+		- may be intermittently connected
+		- may have dynamic IP address
+		- do not communicate directly with each other
+		- examples : HTTP, IMAP, FTP
+- Peer-peer architecture
+	- no always-on server
+	- arbitrary end systems directly communicate
+	- peers request service from other peers, provide service in return to other peers
+		- self scalability - new peers bring new service capacity, as well as new service demands
+	- peers are intermittently connected and change IP address
+		- complex management
+	- example : P2P file sharing
+- Processes communicating
+	- process : program running within a host
+		- within same host, two processes communicate using inter-process communication (defined by OS)
+		- processes in different hosts communicate by exchanging messages
+		- client process : process that initiates communication
+		- server process : process that waits to be contacted
+		- applications with P2P architectures have client & server processes
+- Sockets
+	- process send/receives messages to/from its socket
+	- socket analogous to door
+		- sending process shoves message out door
+		- sending process relies on transport infrastructure on other side of door to deliver message to socket at receiving process
+		- two sockets involved: one on each side
+- Addressing processes
+	- to receive messages, process must have identifier
+	- host device has unique 32-bit IP address
+	- Q : does IP address of host on which process runs suffice for identifying the process?
+		- A : no, many processes can be running on same host
+	- identifier includes both IP address and port numbers associated with process on host
+	- example port numbers:
+		- HTTP server : 80
+		- mail server : 25
+	- to send HTTP message to gaia.cs.umass.edu web server:
+		- IP address : 128.119.245.12
+		- port number : 80
+- An application-layer protocol defines:
+	- types of messages exchanged,
+		- e.g. request, respond
+	- message syntax:
+		- what fields in messages & how fields are delineated
+	- message semantics
+		- meaning of information in fields
+	- rules for when and how processes send & respond to messages
+	- open protocols:
+		- defined in RFCs, everyone has access to protocol definition
+		- allows for interoperability
+		- e.g. HTTP, SMTP
+	- proprietary protocols
+		- e.g. Skype, Zoom
+- What transport service does an app need?
+	- data integrity
+		- some apps (e.g. file transfer, web transactions) require 100% reliable data transfer
+		- other apps (e.g. audio) can tolerate some loss
+	- timing
+		- some apps (e.g. Internet telephony, interactive games) require low delay to be "effective"
+	- throughput
+		- some apps (e.g. multimedia) require minimum amount of throughput to be "effective"
+		- other apps ("elastic apps") make use of whatever throughput they get
+	- security
+		- encryption, data integrity, ...
+- Internet transport protocols services
+	- TCP service:
+		- reliable transport between sending and receiving process
+		- flow control : sender won't overwhelm receiver
+		- congestion control : throttle sender when network overloaded
+		- connection-oriented : setup required between client and server processes
+		- does not provide : timing, minimum throughput guarantee, security
+	- UDP service:
+		- unreliable data transfer between sending and receiving process
+		- does not provide : reliability, flow control, congestion control, timing, throughput guarantee, security, or connection setup
+- Securing TCP
+	- Vanilla TCP & UDP sockets:
+		- no encryption
+		- cleartext password sent into socket traverse Internet in cleartext
+	- Transport Layer Security (TLS)
+		- provides encrypted TCP connections
+		- data integrity
+		- end-point authentication
+	- TLS implemented in application layer
+		- apps use TLS libraries, that use TCP in turn
+		- cleartext sent into "socket" traverse Internet encrypted
+- Web and HTTP
+	- Web
+		- web page consists of objects, each of which can be stored on different Web servers
+		- object can be HTML file, JPEG image, Java applet, audio file ...
+		- web page consists of base HTML-file which includes several referenced objects, each addressable by a URL
+	- HTTP : HyperText Transfer Protocol
+		- Web's application-layer protocol
+		- client/server model:
+			- client : browser that requests, receives, (using HTTP protocols) and "displays" Web objects
+			- server : Web server sends (using HTTP protocol) objects in response to requests
+	- HTTP uses TCP
+		- client initiates TCP connection (creates socket) to server, port 80
+		- server accepts TCP connection from client
+		- HTTP messages (application-layer protocol messages) exchanged between browser (HTTP client) and Web server (HTTP server)
+		- TCP connection closed
+	- HTTP is "stateless"
+		- server maintains no information about past client requests
+		- protocols that maintain "state" are complex
+			- past history (state) must be maintained
+			- if server/client crashes, their views of "state" may be inconsistent, must be reconciled
+- HTTP connections
+	- Non-persistent HTTP
+		- TCP connection opened
+		- at most one object sent over TCP connection
+			- downloading multiple objects require multiple connections
+		- TCP connection closed
+	- Persistent HTTP
+		- TCP connection opened to a server
+		- multiple objects can be sent over single TCP connection between client, and that server
+		- TCP connection closed
+	- response time
+		- RTT : time for a small packet to travel from client to server and back
+		- HTTP response time (per object) :
+			- one RTT to initiate TCP connection
+			- one RTT for HTTP request and first few bytes of HTTP response to return
+			- object/file transmission time
+			- Non-persistent HTTP response time = 2RTT + file transmission time
+		- Non-persistent HTTP issues:
+			- requires 2 RTTs per object
+			- OS overhead for each TCP connections
+			- browsers often open multiple parallel TCP connections to fetch referenced objects in parallel
+		- Persistent HTTP (HTTP 1.1):
+		- server leaves connection open after sending response
+		- subsequent HTTP messages between same client/server sent over open conneciton
+		- client sends requests as soon as it encounters a referenced object
+		- as little as one RTT for all the referenced objects (cutting response time in half)
+- Other HTTP request messages
+	- POST method:
+		- web page often includes form input
+		- user input sent from client to server in entity body of HTTP POST request messages
+	- GET method (for sending data to server) :
+		- include user data in URL field of HTTP GET request message (following a '?'):
+	- HEAD method:
+		- requests headers (only) that would be returned if specified URL were requested with an HTTP GET method
+	- PUT method:
+	- uploads new file (object) to server
+	- completely replaces file that exists at specified URL with content in entity body of POST HTTP request message
+- HTTP response status codes
+	- status code appears in 1st line in server-to-client response message
+	- some sample codes:
+		- 200 OK
+			- request succeeded, requested object later in this message
+		- 301 Moved Permanently
+			- requested object moved, new location specified later in this message (in Location: field)
+		- 400 Bad Request
+			- request msg not understood by server
+		- 404 Not Found
+			- requested document not found on this server
+		- 505 HTTP Version Not Supported
+- Maintaining user/server state : cookies
+	- HTTP GET/response interactions is stateless
+	- no notion of multi-step exchanges of HTTP messages to complete a Web "transaction"
+		- no need for client/server to track "state" of multi-step exchange
+		- all HTTP requests are independent of each other
+		- no need for client/server to "recover" from a partially-completed-but-never-completely-completed transaction
+	- Web sites and client browser user cookies to maintain some state between transactions
+		- four components:
+			- cookie header line of HTTP response message
+			- cookie header line in next HTTP request message
+			- cookie file kept on user's host, managed by user's browser
+			- back-end database at Web site
+	- What cookies can be used for:
+		- authorization
+		- shopping carts
+		- recommendations
+		- user session state (Web e-mail)
+	- Challenge: How to keep state?
+		- at protocol endpoints: maintain state at sender/receiver over multiple transactions
+		- in message : cookies in HTTP message carry state
+	- cookies and privacy:
+		- cookies permit sites to learn a lot about you on their site
+		- third party persistent cookies(tracking cookies) allow common identity (cookie value) to be tracked across multiple web sites
+- Web caches
+	- user configures browser to point to a (local) Web cache
+	- browser sends all HTTP requests to cache
+		- if object in cache: cache returns object to client
+		- else cache requests object from origin server, caches received object, then returns object to client
+	- Web cache acts as both client and server
+		- server for original requesting client
+		- client to origin server
+	- server tells cache about object's allowable caching in response header:
+		- Cache-Control: max-age=seconds
+		- Cache-Control: no-cache
+	- Why Web caching?
+		- reduce response time for client request
+			- cache is closer to client
+		- reduce traffic on an institution's access link
+		- Internet is dense with caches
+			- enables "poor" content providers to more effectively deliver content
+- HTTP/2
+	- HTTP1.1: introduced multiple, pipelined GETs over single TCP connection
+		- server responds in-order (FCFS) to GET requests
+		- with FCFS, small object may have to wait for transmission (head-of-line (HOL) blocking) behind large object(s)
+		- loss recovery (retransmitting lost TCP segments) stalls object transmission
+	- HTTP/2: increased flexibility at server in sending objects to clinet:
+		- methods, status codes, most header fields unchanged from HTTP1.1
+		- transmission order of requested objects based on client-specified object priority (not necessarily FCFS)
+		- push unrequested objects to client
+		- divide objects into frames, schedule frames to mitigate HOL blocking
+	- HTTP/2 to HTTP/3
+		- HTTP/2 over single TCP connection means:
+			- recovery from packet loss still stalls all object transmissions
+				- as in HTTP1.1, browsers have incentive to open multiple parallel TCP connections to reduce stalling, increase overall throughput
+			- no security over vanilla TCP connection
+			- HTTP/3 : adds security, per object error-and congestion-control (more pipelining) over UDP
+				- more on HTTP/3 in transport layer
+- E-mail
+	- Three major components:
+		- user agents
+			- a.k.a. "mail reader"
+			- composing, editing, reading mail messages
+			- e.g. Outlook, iPhone mail client
+			- outgoing, incoming messages stored on server
+		- mail servers
+			- mailbox contains incoming messages for user
+			- message queue of outgoing (to be sent) mail messages
+		- Simple Mail Transfer Protocol: SMTP
+			- SMTP protocol between mail servers to send email messages
+				- client : sending mail server
+				- server : receiving mail server
+- DNS: Domain Name System
+	- people: many identifiers:
+		- SSN, name, passport #
+	- Internet hosts, routers:
+		- IP address (32 bit) - used for addressing datagrams
+		- "name", e.g. cs.umass.edu - used by humans
+	- Domain Name System (DNS):
+		- distributed database implemented in hierarchy of many name servers
+		- application-layer protocol: hosts, DNS servers communicate to resolve names (address/name translation)
+			- core Internet function, implemented as application-layer protocol
+			- complexity at network's "edge"
+	- DNS services:
+		- hostname-to-IP-address translation
+		- host aliasing
+			- canonical, alias names
+		- mail server aliasing
+		- load distribution
+			- replicated Web servers: many IP addresses correspond to one name
+		- Q: Why not centralize DNS?
+			- single point of failure
+			- traffic volume
+			- distant centralized database
+			- maintenance
+			- A : doesn't scale
+				- Comcast DNS servers alone: 600B DNS queries/day
+				- Akamai DNS servers alone: 2.2T DNS queries/day
+		- Thinking about the DNS
+			- humongous distributed database:
+				- ~ billion records, each simple
+			- handles many trillions of queries/day:
+				- many more reads than writes
+				- performance matters: almost every Internet transaction interacts with DNS - msecs count
+			- organizationally, physically decentralized:
+				- millions of different organizations responsible for their records
+			- "bulletproof": reliability, security
+		- a distributed, hierarchical database
+			- Client wants IP address for www.amazon.com; 1st approximation
+				- client queries root server to find .com DNS server
+				- client queries .com DNS server to get amazon.com DNS server
+				- client queries amazon.com DNS server to get IP address for www.amazon.com
+			- Root name servers:
+				- official, contact-of-last-resort by name servers that can not resolve name
+				- incredibly important Internet function
+					- Internet couldn't function without it
+					- DNSSEC - provides security
+				- ICANN (Internet Corporation for Assigned Names and Numbers) manages root DNS domain
+			- Top-Level Domain (TLD) servers:
+				- responsible for .com, .org, .net, .edu, .aero, .jobs, .museums, and all top-level country domains, e.g. .cn, .uk, .fr, .ca, .jp
+				- Network Solutions: authoritative registry for .com, .net TLD
+				- Educause: .edu TLD
+			- Authoritative DNS servers:
+				- organization's own DNS server(s), providing authoritative hostname to IP mappings for organization's names hosts
+				- can be maintained by organization or service provider
+			- Local DNS name servers
+				- when host makes DNS query, it is sent to its local DNS server
+					- Local DNS server returns reply, answering:
+						- from its local cache of recent name-to-address translation pairs (possibly out of date)
+						- forwarding request into DNS hierarchy for resolution
+					- each ISP has local DNS name server; to find yours:
+						- MacOS: % scutil --dns
+						- Windows: >ipconfig /all
+				- local DNS server doesn't strictly belong to hierarchy
+		- DNS name resolution
+			- Iterated query:
+				- contacted server replies with name of server to contact
+				- "I don't know this name, but ask this server"
+			- Recursive query
+				- puts burden of name resolution on contacted name server
+				- heavy load at upper levels of hierarchy?
+		- Caching DNS information
+			- once (any) name server learns mapping, it caches mapping, and immediately returns a cached mapping in response to a query
+				- caching improves response time
+				- cache entries timeout (disappear) after some time (TTL)
+				- TLD servers typically cached in local name servers
+			- cached entries may be out-of-date
+				- if named host changes IP address, may not be known Internet-wide until all TTLs expire
+				- best-effort name-to-address translation
+		- DNS records
+			- DNS : distributed database storing resource records (RR)
+				- RR format : (name, value, type, ttl)
+					- type=A
+						- name is hostname
+						- value is IP address
+					- type=NS
+						- name is domain(e.g. foo.com)
+						- value is hostname of authoritative name server for this domain
+					- type=CNAME
+						- name is alias name for some "canonical"(the real) name
+						- www.ibm.com is really servereast.backup2.ibm.com
+						- value is canonical name
+					- type=MX
+						- value is name of SMTP mail server associated with name
+		- DNS protocol messages
+			- DNS query and reply messages, both have same format:
+				- message header:
+					- identification : 16 it # for query, reply to query uses same #
+					- flags:
+						- query or reply
+						- recursion desired
+						- recursion available
+						- reply is authoritative
+		- DNS security
+			- DDos attacks
+				- bombard root servers with traffic
+					- not successful to date
+					- traffic filtering
+					- local DNS servers cache IPs of TLD servers, allowing root server bypass
+				- bombard TLD servers
+					- potentially more dangerous
+			- Spoofing attacks
+				- intercept DNS queries, returning bogus replies
+					- DNS cache poisoning
+					- RFC 4033: DNSSEC authentication services
+- Peer-to-peer (P2P) architecture
+	- no always-on server
+	- arbitrary end systems directly communicate
+	- peers request service from other peers, provide service in return to other peers
+		- self scalability - new peers bring new service capacity, and new service demands
+	- peers are intermittently connected and change IP addresses
+		- complex management
+	- examples: P2P  file sharing, streaming, VoIP
+- File distribution : client-server vs P2P
+	- Q : how much time to distribute file (size of F) from one serveer to N peers?
+		- client-server
+			- server transmission : must sequentially send (upload) N file copies:
+				- time to send one copy: F/us
+				- time to send N copies: NF/us
+			- client : each client must download file copy
+				- dmin = min client download rate
+				- min client download time: F/dmin
+			- Dc-s >= max{NF/us, F/dmin}
+		- P2P
+			- server transmission : must upload at least one copy:
+				- time to send one copy: F/us
+			- client: each client must download file copy
+				- min client download time: F/dmin
+			- clients: as aggregate must download NF bits
+				- max upload rate (limiting max download rate) is us + sigma ui
+			- Dp2p >= max{F/us, F/dmin, NF/(ux+sigma ui)}
+- Video Streaming and CDNs
+	- stream video traffic : major consumer of Internet bandwidth
+		- Netflix, YouTube, Amazon Prime : 80% of residential ISP traffic
+	- challenge : scale - how to reach ~1B users?
+	- challenge : heterogeneity
+		- different users have different capabilities (e.g. wired versus mobile; bandwidth rich versus bandwidth poor)
+	- solution : distributed, application-level infrastructure
+- multimedia
+	- video : sequence of images displayed at constant rate
+		- e.g. 24 images/sec
+		- digital image : array of pixels
+			- each pixel represented by bits
+		- coding : use redundancy within and between images to decrease # bits used to encode image
+			- spatial (within image)
+			- temporal (from one image to next)
+		- CBR (constant bit rate) : video encoding rate fixed
+		- VBR (variable bit rate) : video encoding rate changes as amount of spatial, temporal coding changes
+		- examples:
+			- MPEG 1 (CD-ROM) 1.5 Mbps
+			- MPEG2 (DVD) 3-6 Mbps
+			- MPEG4 (often used in Internet, 64 Kbps - 12 Mbps)
+	- Streaming stored video
