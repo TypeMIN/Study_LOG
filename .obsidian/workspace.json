@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3e4e27471ed67d08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Security/Access Control.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Access Control.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Security/Confidentiality.md",
+                "file": "Computer Security/Access Control.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Security/Confidentiality.md"
+                "file": "Computer Security/Access Control.md"
               }
             }
           },
@@ -145,7 +158,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Computer Security/Confidentiality.md"
+                "file": "Computer Security/Access Control.md"
               }
             }
           }
@@ -167,8 +180,10 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "ebe421f1e0b55518",
+  "active": "3e4e27471ed67d08",
   "lastOpenFiles": [
+    "Computer Security/Confidentiality.md",
+    "Computer Security/Access Control.md",
     "Computer Security/Cryptography.md",
     "Computer Security/Classical Cryptography.md",
     "Computer Security/Active Attack.md",
@@ -180,7 +195,6 @@
     "Computer Network/Packet.md",
     "Computer Network/Protocol.md",
     "Computer Network/Application Layer.md",
-    "Computer Security/Confidentiality.md",
     "Computer Security/Confidentiality 2.md",
     "Computer Network/Network Edge.md",
     "Computer Security/Authentication.md",
@@ -194,7 +208,6 @@
     "Computer Security/Symmetric Key Cryptography.md",
     "Computer Security/Hash Functions.md",
     "Computer Security/Digital Signature.md",
-    "Computer Security/Asymmetric Key Cryptography.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",
