@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Security/Authentication.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Security/Authentication.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Security/Authentication.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Security/Access Control.md"
+                "file": "Computer Security/Authentication.md"
               }
             }
           },
@@ -158,7 +158,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Computer Security/Access Control.md"
+                "file": "Computer Security/Authentication.md"
               }
             }
           }
@@ -182,8 +182,10 @@
   },
   "active": "3e4e27471ed67d08",
   "lastOpenFiles": [
-    "Computer Security/Confidentiality.md",
     "Computer Security/Access Control.md",
+    "Computer Security/Authentication.md",
+    "Computer Security/Security Service.md",
+    "Computer Security/Confidentiality.md",
     "Computer Security/Cryptography.md",
     "Computer Security/Classical Cryptography.md",
     "Computer Security/Active Attack.md",
@@ -197,7 +199,6 @@
     "Computer Network/Application Layer.md",
     "Computer Security/Confidentiality 2.md",
     "Computer Network/Network Edge.md",
-    "Computer Security/Authentication.md",
     "Computer Security/Availability.md",
     "Computer Security/Block Cipher Modes of Operation.md",
     "Computer Security/Properties of Computer Security.md",
@@ -207,7 +208,6 @@
     "Computer Security/Modern Cryptography.md",
     "Computer Security/Symmetric Key Cryptography.md",
     "Computer Security/Hash Functions.md",
-    "Computer Security/Digital Signature.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",
