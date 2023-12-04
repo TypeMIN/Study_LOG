@@ -14,7 +14,7 @@
 			- the way you sign, the way you speak
 
 ### Password-based Authentication
-- clear text password
+- clear text passwordddd
 	- Problem
 		- SSL/TLS Encryption
 			- Problem
