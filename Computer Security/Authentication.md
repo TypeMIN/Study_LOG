@@ -1,6 +1,6 @@
 ## Authentication
 - the process by which the identity of someone or something
-
+d
 ### Authentication methods
 - typical methods
 	- knowledge : something you know
