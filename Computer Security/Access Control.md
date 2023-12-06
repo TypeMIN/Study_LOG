@@ -1,7 +1,7 @@
 ## Operating system security
 - one of the main goal of OS : resource sharing
 - important question : how to securely share resources?
-
+d
 ## Principle of Least Privilege
 
 ## Access control
