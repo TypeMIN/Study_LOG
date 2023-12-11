@@ -13,13 +13,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Network/Application Layer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c3f7b9ae1f5af310",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Network/Transport Layer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "46eff81318d19650",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Network/Network Layer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "35b438392c2c3803",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Network/Network Layer.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Network/Network Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Security/Access Control.md",
+                "file": "Computer Network/Network Layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Security/Access Control.md"
+                "file": "Computer Network/Network Layer.md"
               }
             }
           },
@@ -145,7 +182,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Computer Security/Access Control.md"
+                "file": "Computer Network/Network Layer.md"
               }
             }
           }
@@ -167,12 +204,16 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "74c2a684db87e135",
+  "active": "35b438392c2c3803",
   "lastOpenFiles": [
+    "Computer Network/Transport Layer.md",
+    "Computer Network/Link Layer.md",
+    "Computer Network/Network Layer.md",
+    "Computer Network/Application Layer.md",
+    "Computer Security/Access Control.md",
     "Computer Network/Computer Network.md",
     "Computer Security/Confidentiality.md",
     "Computer Security/Authentication.md",
-    "Computer Security/Access Control.md",
     "Computer Security/Security Service.md",
     "Computer Security/Cryptography.md",
     "Computer Security/Classical Cryptography.md",
@@ -183,7 +224,6 @@
     "Computer Architecture/Computer Architecture.md",
     "Computer Network/Packet.md",
     "Computer Network/Protocol.md",
-    "Computer Network/Application Layer.md",
     "Computer Security/Confidentiality 2.md",
     "Computer Network/Network Edge.md",
     "Computer Security/Availability.md",
@@ -192,9 +232,6 @@
     "Computer Security/Non-repudiation.md",
     "Computer Security/Computer Security.md",
     "Computer Security/Public-Key Infrastructure.md",
-    "Computer Security/Modern Cryptography.md",
-    "Computer Security/Symmetric Key Cryptography.md",
-    "Computer Security/Hash Functions.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",
