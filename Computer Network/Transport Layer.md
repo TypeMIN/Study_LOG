@@ -42,7 +42,7 @@
 ## Multiplexing/De-multiplexing
 - Multiplexing as sender
 	- handle data from multiple sockets, add transport header (later used for demultiplexing)
-- Demultiplexing as reciever
+- Demultiplexing as receiver
 	- use header info to deliver received segment to correct socket
 - How demultiplexing works
 	- host receives IP datagrams
