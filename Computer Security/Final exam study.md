@@ -1,17 +1,25 @@
 # Concepts in Security
 ## CIA Properties
-- Confidentiality
+- Confidentiality (기밀성)
 	- Information is not made available to unauthorized parties
-- Integrity
+	- 정보나 데이터가 오직 인가된 사용자나 엔터티에게만 엑세스가 허용되어야 함
+- Integrity (무결성)
 	- Information is not modified in an unauthorized manner
-- Availability
+	- 정보나 데이터가 변조되거나 손상되지 않아야 함
+- Availability (가용성)
 	- Information is readily available when it is need
+	- 시스템이 필요한 시간에 사용 가능해야 함
 # Cryptography
 ## Symmetric-key Cryptography
 - symmetric : the encryption and decryption keys are the same
+- 특징
+	- encryption과 decryption key가 동일함
+	- 빠른 처리속도
 ### Block cipher
 - block cipher
 	- encrypt fixed-length groups of bits, called blocks, at a time, applying the algorithm to the each block
+- 대칭키 암호화의 한 유형
+- 고정 크기의 블록 단위로 데이터를 암호화/복호화
 ### Components of a Modern Block cipher
 - Transposition cipher (P-box : permutation box)
 	- P-box parallels the traditional transposition cipher
@@ -41,10 +49,13 @@
 ### Design Principles for Block cipher
 - Diffusion
 	- The influence of one plain text bits is spread over many ciphertext bits
+	- 입력 데이터의 작은 변화가 출력 데이터에 큰 영향을 미치도록 보장
 - Confusion
 	- The influence of one key bit is spread over many ciphertext bits
+	- 암호문과 키 관계를 복잡하게 만듦
 - Rounds
 	- Diffusion and confusion can be achieved using iterated block ciphers
+	- 추가 라운드는 보안을 강화하지만 암호화/복호화 속도를 늦춤
 ### Block cipher Modes of Operation
 - ECB (Electronic Code Book)![[스크린샷 2023-12-12 13.54.49.png]]
 - CBC (Cipher Block Chaining)![[스크린샷 2023-12-12 13.55.03.png]]
@@ -53,13 +64,13 @@
 - CTR (CounTeR mode)![[스크린샷 2023-12-12 13.57.29.png]]
 ## Asymmetric-key Cryptography
 - each party has two distinct keys
-	- public key
-	- private key
+	- public key (공개키)
+	- private key (개인키)
 ### (Extended) Euclidean Algorithm (computation)
 - Euclidean Algorithm
 	- Finding GCD
 		- gcd(a, 0) = a
-		- gcd(a, b) = bcd(b, r), where r = a % b
+		- gcd(a, b) = gcd(b, r), where r = a % b
 - Extended Euclidean Algorithm
 	- computing integers x, y
 		- ax + by = gcd(a, b)
@@ -103,7 +114,8 @@
 - Efficiency
 # Software security
 ## Reverse Engineering
-## Control Flow Hijack
+## Control Flow 
+- 주로 보안 취약점을 이용하여 프로그램의 실행 흐름을 악의적으로 조작하려는 시도를 가리키는 보안 공격 기술
 ## Canary & DEP
 - Canary
 	- Early warnings of buffer overflows
@@ -172,9 +184,12 @@
 ## Spoofing
 - a situation in which a person or program is successfully identified as another by modifying data
 	- IP spoofing
+		- 자신의 IP 주소를 다른 사용자나 시스템의 IP 주소로 위조하여 네트워크 트래픽을 속이는 행위
 	- ARP spoofing
 		- ARP (Address Resolution Protocol)
+		- 공격자가 네트워크에서 다른 장치의 ARP 테이블을 위조하여 트래픽을 리다이렉션하거나 감시하는 것
 	- DNS spoofing
+		- 공격자가 DNS 서버의 응답을 위조하여 사용자를 악의적인 웹 사이트로 리다이렉션하거나 사용자의 DNS 요청을 감시하는 공격
 # Protocol Security
 ## How SSL/TLS Provides Security Properties?
 - SSL (Secure Sockets Layer)
