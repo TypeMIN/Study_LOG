@@ -74,10 +74,59 @@
 - Extended Euclidean Algorithm
 	- computing integers x, y
 		- ax + by = gcd(a, b)
+	- Exercise
+		- Given a = 161 and b = 28, find gcd(a, b) and the values of x and y such that ax + by = gcd(a, b)
+			- ax + by = gcd(a, b)
+				- 161x + 28y = gcd(a, b)
+			- euclidean algorithm
+				- gcd(161, 28)
+					- 161 = (28 * 5) + 21
+				- gcd(28, 21)
+					- 28 = (21 * 1) + 7
+				- gcd(21, 7)
+					- 21 = (7 * 3) + 0
+				- gcd(7, 0)
+					- 7
+			- calculate
+				- 161 = (28 * 5) + 21
+					- 161 - (28 * 5) = 21
+				- 28 = (21 * 1) + 7
+					- 28 - (21 * 1) = 7
+				- 28 - ((161 - (28 * 5)) * 1) = 7
+				- 28 - (161 - (28 * 5)) = 7
+				- 28 - 161 + (28 * 5)= 7
+				- 161 * (-1) + 28 * 6 = 7
+				- x = -1, y = 6
 ### RSA Algorithm
 - Key Generation
+	- Select two large primes p and q
+		- p = 7, q = 13
+	- Compute n = pq and phi(n) =  (p - 1)(q - 1)
+		- n = 7 * 13 = 91
+		- phi(n) = (7 - 1)(13 - 1) = 72
+	- Choose e s.t. 1 < e < phi(n) and gcd(phi(n), e) = 1
+		- euclidean algorithm
+		- e = 5
+	- Choose d s.t. 1 < d < phi(n) and (ed mod phi(d)) = 1
+		- extended euclidean algorithm
+		- ed + phi(n)(-k) = gcd(phi(n), e) = 1
+		- d = 29
 - Encryption and Decryption
+	- c = E(m, pk) = m^e mod n
+		- m = 10
+		- c = E(10, pk) = 10^5 mod 91 = 82
+	- m = D(c, sk) = c^d mod n
+		- c = 82
+		- m = D(82, sk) = 82^29 mod 91 = 
 - Correctness of RSA Algorithm
+	- c = m^e mod n
+	- m = c^d mod n
+		- m = (m^e mod n)^d mod n
+		- m = m^(ed) mod n
+		- m = m^(1+k * phi(n))
+		- m = m * (m^phi(n))^k mod n
+		- m = m mod n
+		- m = m
 - Security of RSA Algorithm
 ## Public-key Infrastructure
 ### Certificate
@@ -99,6 +148,16 @@
 ## Hash & MAC
 ### Hash vs MAC vs Digital Signature
 - Hash
+	- Hash  function standard
+		- MD5
+			- pairs of collisions reported
+			- still used for simple data diffing
+		- SHA-1
+			- Pairs of collisions reported
+			- Broken
+		- SHA-256
+		- SHA-384
+		- SHA-512
 - MAC (Message Authentication Codes)
 	- "Cryptographic checksum" to ensure the integrity of the message and the data origin authentication
 ### Hash Function Requirements
