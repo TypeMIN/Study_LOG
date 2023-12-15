@@ -117,7 +117,7 @@
 		- c = E(10, pk) = 10^5 mod 91 = 82
 	- m = D(c, sk) = c^d mod n
 		- c = 82
-		- m = D(82, sk) = 82^29 mod 91 = 
+		- m = D(82, sk) = 82^29 mod 91 = 10
 - Correctness of RSA Algorithm
 	- c = m^e mod n
 	- m = c^d mod n
@@ -217,10 +217,24 @@
 - Types
 	- Reflected XSS (server-side)
 		- exploits a server-side web application vulnerability
+			- Visit attacker's website
+			- Receive malicious page
+			- Click the link
+			- Receive page with the malicious JS code
+			- Send victim's sensitive data
 	- Stored XSS
 		- attacker stores the JS code in the server-side component
+			- Inject the malicious JS code
+			- Access page
+			- Receive page with the stored script
+			- Send victim's sensitive data
 	- DOM-based XSS (client-side)
 		- attacker payload is executed by modifying the "DOM environment" used by the original client-side script
+			- Visit attacker's webpage
+			- Receive malicious page
+			- Click the link
+			- Receive a normal page
+			- Send victim's sensitive data
 	- Universal XSS
 		- exploits a browser bug to inject malicious payload to any webpage origin
 ## Content Security Policy
@@ -320,3 +334,12 @@
 # AI Security
 ## Adversarial Attacks
 - a cyber-attack that aims to misguide a model with malicious input
+- Evasion attack
+	- the adversary tries to evade the system by adjusting malicious samples
+	- takes place during the testing time of the machine learning model
+	- FGSM (Fast Gradient Sign Method)
+	- PGD (Projected Gradient Descent)
+	- CW (Carlini&Wagner's attack)
+- Poisoning attack
+	- Contamination of the training data
+	- Takes place during the training time of the machine leaning model
