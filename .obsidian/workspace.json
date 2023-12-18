@@ -61,14 +61,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Security/Final exam study.md",
+                "file": "Linear Algebra/Linear Algebra.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "503ad49bc7c8fd09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Statistics/Statistics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d81108d92505c360",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Statistics/AIGS 면접 준비.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -134,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Security/Final exam study.md",
+                "file": "Statistics/AIGS 면접 준비.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Security/Final exam study.md",
+                "file": "Statistics/AIGS 면접 준비.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Security/Final exam study.md"
+                "file": "Statistics/AIGS 면접 준비.md"
               }
             }
           },
@@ -194,7 +218,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Computer Security/Final exam study.md"
+                "file": "Statistics/AIGS 면접 준비.md"
               }
             }
           }
@@ -216,8 +240,12 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "4d42fc3204011e09",
+  "active": "d81108d92505c360",
   "lastOpenFiles": [
+    "Statistics/Statistics.md",
+    "Statistics/AIGS 면접 준비.md",
+    "Linear Algebra/AIGS 면접 준비.md",
+    "Linear Algebra/Linear Algebra.md",
     "Computer Security/Final exam study.md",
     "스크린샷 2023-12-12 13.57.29.png",
     "스크린샷 2023-12-12 13.56.44.png",
@@ -245,9 +273,6 @@
     "Computer Security/Classical Cryptography.md",
     "Computer Security/Aspects of Security.md",
     "Computer Network/Socket programming.md",
-    "Computer Network/Internet.md",
-    "Computer Architecture/Computer Architecture.md",
-    "Computer Network/Packet.md",
     "무제 파일.canvas",
     "Statistics",
     "Operating System",
