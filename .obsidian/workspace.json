@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "2023-12-28.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "2023-12-28.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "2023-12-28.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "2023-12-28.md"
               }
             }
           },
@@ -160,7 +160,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "README.md"
+                "file": "2023-12-28.md"
               }
             }
           }
@@ -185,6 +185,9 @@
   },
   "active": "7c8d8622fd09737c",
   "lastOpenFiles": [
+    "무제 파일.canvas",
+    "2023-12-28.md",
+    "README.md",
     "Computer Security/Active Attack.md",
     "2023-12-27.md",
     "Computer Security/Access Control.md",
@@ -213,10 +216,6 @@
     "Computer Network/Computer Network.md",
     "Computer Security/Confidentiality.md",
     "Computer Security/Authentication.md",
-    "Computer Security/Security Service.md",
-    "Computer Security/Cryptography.md",
-    "Computer Security/Classical Cryptography.md",
-    "무제 파일.canvas",
     "Statistics",
     "Operating System",
     "Linear Algebra",
