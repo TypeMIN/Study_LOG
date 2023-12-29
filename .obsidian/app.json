@@ -4,5 +4,7 @@
   "newFileLocation": "current",
   "alwaysUpdateLinks": true,
   "showLineNumber": true,
-  "focusNewTab": false
+  "focusNewTab": false,
+  "vimMode": false,
+  "showUnsupportedFiles": false
 }
