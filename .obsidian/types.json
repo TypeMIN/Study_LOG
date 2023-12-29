@@ -1,0 +1,14 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "blish": "text",
+    "df": "number",
+    "number": "number",
+    "list": "multitext",
+    "checkbox": "checkbox",
+    "date": "date",
+    "date&time": "datetime"
+  }
+}

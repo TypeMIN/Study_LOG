@@ -1,0 +1,144 @@
+## Packet
+
+- packets queue in router buffers, waiting for turn for transmission
+	- queue length grows when arrival rate to link (temporarily) exceeds output link capacity
+- packet loss occurs when memory to hold queued packets fills up
+
+### Packet Delay : four sources
+- d_nodal = d_proc + d_queue + d_trans + d_prob
+	- d_proc : nodal processing
+		- check bit errors
+		- determine output link
+		- typically < microsecs
+	- d_queue : queueing delay
+		- time waiting at output link for transmission
+		- depends on congestion level of router
+	- d_trans : transmission delay
+		- L : packet length (bits)
+		- R : link transmission rate (bps)
+		- d_trans : L/R
+	- d_prob : propagation delay
+		- d : length of physical link
+		- s : propagation speed(~2*10^8 m/sec)
+		- d_prob : d/s
+- Caravan analogy
+	- car ~ bit; caravan ~ packet; toll service ~ link transmission
+	- toll booth takes 12 sec to service car (bit transmission time)
+	- "propagate" at 100 km/hr
+	- Q : How long until caravan is lined up before 2nd tool booth?
+		- 62 minutes
+			- time to "push" entire caravan through toll booth onto highway = 12 * 10 = 120 sec
+			- time for last car to propagate from 1st to 2nd toll both: 100km/(100km/hr) = 1hr
+	- suppose cars now "propagate" at 1000km/hr
+	- and suppose toll booth now takes one min to service a car
+	- Q : Will cars arrive to 2nd booth before all cars serviced at first booth?
+		- Yes
+			- after 7 min, first car arrives at second booth;
+			- three cars still at first booth
+- Packet queueing delay (revisited)
+	- $\alpha$ : average packet arrival rate
+	- `L` : packet length (bits)
+	- `R` : link bandwidth (bit transmission rate)
+	- `traffic intensity` $\frac{L \times \alpha}{R}$ : arrival rate of bits/service rate of bits
+		- ~ 0 : avg. queueing delay small
+		- -> 1 : avg. queueing delay large
+		- >1 : more "work" arriving is more than can be serviced - average delay infinite!
+- "Real" Internet delays and routes
+	- what do "real" Internet delay & loss look like?
+	- traceroute program : provides delay measurement from source to router along end-end Internet path towards destination. For all i:
+		- sends three packets that will reach router i on path towards destination (with time-to-live field value of i)
+		- router i will return packets to sender
+		- sender measures time interval between transmission and reply
+- Packet loss
+	- queue (aka buffer) preceding link in buffer has finite capacity
+	- packet arriving to full queue dropped (aka lost)
+	- lost packet may be retransmitted by previous node, by source end system, or not at all
+- Troughtput
+	- throughput : rate  (bits/time unit) at which bits are being sent from sender to receiver
+		- instantaneous : rate at given point in time
+		- average : rate over longer period of time
+		- Rs < Rc : What is average end-end throughput?
+		- Rs > Rc : What is average end-end throughput?
+		- bottleneck link
+			- link on end-end path that constrains end-end throughput
+- Throughput : network scenario
+	- per-connection end-end throughput : min(Rc, Rs, R/10)
+	- in practice : Rc or Rs is often bottleneck
+- Network security
+	- Internet not originally designed with (much) security in mind
+		- original vision : "a group of mutually trusting users attached to a transparent network"
+		- Internet protocol designers playing "catch-up"
+		- security considerations in all layers!
+	- We now need to think about:
+		- how bad guys can attack computer networks
+		- how we can defend networks against attacks
+		- how to design architectures that are immune to attacks
+- Bad guys : packet interception
+	- packet "sniffing"
+		- broadcast media (shared Ethernet, wireless)
+		- promiscuous network interface reads/records all packets (e.g. including passwords!) passing by
+- Bad guys : fake identity
+	- IP spoofing
+		- injection of packet with false source address
+- Bad guys : denial of service
+	- Denial of Service (Dos) : attackers make resources (server, bandwidth) unavailable to legitimate traffic by overwhelming resource with bogus traffic
+		- select target
+		- break into hosts around the network (see botnet)
+		- send packets to target from compromised hosts
+- Line of defense:
+	- authentication : proving you are who you say you are
+		- cellular networks provides hardware identity via SIM card; no such hardware assist in traditional Internet
+	- confidentiality : via encryption
+	- integrity checks : digital signatures prevent/detect tampering
+	- access restrictions : password-protected VPNs
+	- firewalls : specialized "middleboxes" in access and core networks:
+		- off-by-default : filter incoming packets to restrict senders, receivers, applications
+		- detecting/reacting to DOS attacks
+- Protocol "layers" and reference models
+	- Networks are complex with many "pieces"
+		- hosts
+		- routers
+		- links of various media
+		- applications
+		- protocols
+		- hardware, software
+	- Q : is there any hope of organizing structure of network?
+		- and/or our discussion of networks?
+- Why layering?
+	- Approach to design/discussing complex systems:
+		- explicit structure allows identification, relationship of system's pieces
+			- layered reference model for discussion
+		- modularizations eases maintenance, updating of system
+			- change in layer's service implementation: transparent to rest of system
+			- e.g. change in congestion control at transport layer doesn't affect rest of system
+- Layered Internet protocol stack
+	- application : supporting network applications
+		- HTTP, IMAP, SMTP, DNS
+	- transport : process-process data transfer
+		- TCP, UDP
+	- network  : routing of datagrams from source to destination
+		- IP, routing protocols
+	- link : data transfer between neighboring network elements
+		- Ethernet, 802.11 (WiFi), PPP
+	- physical : bits "on the wire"
+- ISO/OSI reference model
+	- Two layers not found in Internet protocol stack
+		- presentation : allow applications to interpret meaning of data, e.g. encryption, compression, machine-specific conventions
+		- session : synchronization, checkpointing , recovery of data exchange
+		- Internet stack "missing" these layers
+			- these services, if needed, must be implemented in application
+- Services, Layering and Encapsulation
+	- Application exchanges messages to implement some application service using services of transport layer
+	- Transport-layer protocol transfers M (e.g. reliably) from one process to another, using services of network layer
+		- transport-layer protocol encapsulates application-layer message, M, with transport layer-layer header Ht to create a transport-layer segment
+			- Ht used by transport layer protocol to implement its service
+	- Network-layer protocol transfers transport-layer segment from one host to another, using link layer services
+		- network-layer protocol encapsulates transport-layer segment with network layer-layer header Hn to create a network-layer datagram
+			- Hn used by network layer protocol to implement its service
+	- Link-layer protocol encapsulates network datagram, with link-layer header Hl to create link-layer frame
+- Encapsulation
+	- Matryoshka dolls (stacking dolls)
+		- frame
+			- datagram
+				- segment
+					- message

@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"584b37743be11f5f","type":"text","text":"","x":-368,"y":-166,"width":250,"height":60},
+		{"id":"fcc984b33d6fd5ef","type":"text","text":"","x":-364,"y":-85,"width":250,"height":60},
+		{"id":"b895f0bfa3464d21","type":"text","text":"","x":-335,"y":2,"width":250,"height":60},
+		{"id":"204e2a56cb3172fa","type":"text","text":"","x":-15,"y":-122,"width":250,"height":60},
+		{"id":"dc878e911502cde2","type":"text","text":"","x":-58,"y":12,"width":250,"height":60},
+		{"id":"4467795b37733a22","type":"text","text":"","x":-125,"y":-30,"width":250,"height":60},
+		{"id":"f774733f319b15c0","type":"file","file":"주간동아 1년 정기구독.md","x":0,"y":0,"width":400,"height":400},
+		{"id":"6045de7542a97f1b","type":"file","file":"스크린샷 2023-12-12 13.57.29.png","x":-114,"y":-460,"width":399,"height":244}
+	],
+	"edges":[]
+}

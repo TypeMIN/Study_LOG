@@ -1,0 +1,107 @@
+## Public_Key Infrastructure (PKI)
+
+- Key idea of Public-Key Infrastructure
+	- Certificate Authority (CA)
+		- Trusted 3rd-party authority
+		- Manage, distribute, verify public-keys
+		- Digital signature of CA
+			- Hash-based digital signature
+- Hash-based digital signature in PKI
+	- Signing
+		- Encrypt with CA's private key
+		- Verify CA's signature (via hash comparison) and confirm Bob's public key
+	- Verification
+		- Confirm Bob's public key
+		- Integrity check
+	- The set of processes required to create, manage, distribute, use, store, and revoke digital certificates and public-keys
+		- Two important components
+			- Certificate Authority (CA)
+				- a trusted party, responsible for verifying the identity of users, and then bind the verified identity to a public keys
+			- Digital Certificates
+				- a document certifying that the public key included inside does belong to the identity described in the document
+					- X.509 standard
+						- Version
+						- Serial Number
+						- Signature Algorithm Identifier
+						- Issuer Name
+						- Validity Period
+						- Subject Name
+						- Public Key Information
+						- Issuer Unique ID
+						- Subject Unique ID
+						- Extensions
+- Chain of Trust
+	- How can we trust that the public key belongs to CA?
+		- Embedded in OS or web browsers
+		- Signed with root CA's public key
+	- The Core Functionalities of CA
+		- Verify the subject
+			- Ensure that the person applying for the certificate either owns or represents the identity in the subject field
+		- Signing digital certificates
+			- CA generates a digital signature for the certificate using its private key
+			- Once the signature is applied, the certificate cannot be modified
+			- Signatures can be verified by anyone with the CA's public key
+- Digital Certificate
+- Encryption vs Integrity
+	- "Encryption hides message contents and thus adversary cannot modify the encrypted message (T/F)"
+	- In many cases, message integrity is equally (or more) important
+- Cryptographic Hash Functions
+	- Condense arbitrary message to fixed size
+	- **No key for input**
+	- Usually assume hash function is public (e.g. MD5, SHA-512, etc.)
+	- Hash Function Requirements
+		- Preimage resistant
+			- Given y, computationally infeasible to find x such that H(x) = y
+			- So-called one-way property
+			- Example
+				- Factoring: H(x1, x2) = x1 * x2 where x1, x2 are prime numbers
+				- Discrete logarithm: H(x) = kx mod p
+			- Application: Password Storage
+				- Goal: store ID and password pairs to authenticate users
+				- Bad approach: store ID and password pairs in plaintext to a DB
+			- Application: Hash-based Password Storage
+				- Hashing passwords
+					- Why do we need strong password requirements
+						- Same password -> Same hash value
+						- Salted Hash: use a randomly generated number to make a hash
+		- Second preimage resistant
+			- Given x, computationally infeasible to find z such that x != z and H(x) = H(z)
+			- Example
+				- integrity of software distribution, fingerprinting(e.g. virus, deduplication)
+		- Collision resistant
+			- Computationally infeasible to find any pair(x,z) such that x!=z and H(x) = H(z)
+			- Birthday Paradox
+			- Birthday attack
+				- If we have an m bit hash value, $2^{m/2}$ work is needed to break collision resistant
+					- To ensure security against $2^n$ attacks, the hash output length must be 2n-bits
+			- Hash Function standards
+				- MD5
+					- Pairs of collisions reported
+					- Still used for simple data diffing
+				- SHA-1
+					- Pairs of collisions reported
+					- Broken
+				- SHA-256, SHA-384, SHA-512 (message digest size)
+		- Efficiency
+			- It is relatively easy to compute for any give input
+	- Massage Authentication Codes (MAC)
+		- "Cryptographic checksum" to ensure the integrity of the message and the data origin authentication (in symmetric-key cryptography)
+		- CBC-MAC, CMAC, OMAC, HMAC
+			- HMAC
+	- Holy Grail of Cryptography
+		- Is it possible to provide a secure public service?
+			- i.e. computations on encrypted data
+		- Example
+			- Average GPA in the class with encrypted GPAs
+			- Covid-19 alert with encrypted location information
+			- Election with encrypted votes
+		- Necessary property: homomorphism
+	- Homomorphic Encryption
+		- Allows computations on encrypted data
+		- A Simplified Symmetric Homomorphic Encryption
+			- Plaintext space: {0, 1}
+			- Secret key: p
+			- Random numbers: q and e
+			- Encryption: Enc(m) = m + qp + 2e
+			- Decryption: Dec(c) = (c mod p) mod 2
+			- Homomorphism

@@ -1,1 +1,0 @@
-- A service which ensures adequate security of the systems or of data transfers

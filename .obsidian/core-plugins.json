@@ -20,5 +20,6 @@
   "word-count",
   "slides",
   "file-recovery",
-  "publish"
+  "publish",
+  "sync"
 ]
