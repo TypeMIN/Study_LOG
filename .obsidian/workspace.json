@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "7336eaf8bf914bba",
+        "id": "4089e1a3e96740f5",
         "type": "tabs",
         "children": [
           {
-            "id": "78b1f09c1b850d47",
+            "id": "58a3ba7dae955601",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PS LOG/BOJ/4134 다음 소수.md",
-                "mode": "source",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PS LOG/BOJ/4134 다음 소수.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PS LOG/BOJ/4134 다음 소수.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "PS LOG/BOJ/4134 다음 소수.md"
-              }
+              "state": {}
             }
           },
           {
@@ -146,9 +138,7 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "PS LOG/BOJ/4134 다음 소수.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -170,8 +160,9 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "18ba19a176a9ba0f",
+  "active": "58a3ba7dae955601",
   "lastOpenFiles": [
+    "PS LOG/BOJ/4134 다음 소수.md",
     "PS LOG/Programmers/Level 3",
     "PS LOG/Programmers/Level 2",
     "PS LOG/Programmers/Level 1",
@@ -180,7 +171,6 @@
     "PS LOG/BOJ/Bronze",
     "PS LOG/Programmers",
     "PS LOG/BOJ",
-    "PS LOG/BOJ/4134 다음 소수.md",
     "Study LOG/Computer Network/test/test2.md",
     "Study LOG/Computer Network/test/test2/JLPT 한권으로 끝내기 N3.md",
     "README.md",
@@ -207,7 +197,6 @@
     "Study LOG/Computer Network/test/test2",
     "Study LOG/Computer Network/test",
     "맨체스터 배경사진(22.12.29).jpg",
-    "PS LOG",
     "Study LOG/Computer Security/Final exam study.md",
     "스크린샷 2023-12-12 13.55.03.png",
     "스크린샷 2023-12-12 13.54.49.png",
